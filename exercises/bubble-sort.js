@@ -1,4 +1,4 @@
-function bubbleSort(arr, num){
+function bubbleSort(arr){
     for(let i = 0; i < arr.length; i++){
         for(let j = 0; j < arr.length; j++){
             if(arr[j]>arr[j+1]){
@@ -8,6 +8,7 @@ function bubbleSort(arr, num){
             }
         }
     }
+    return arr
 }
 
-bubbleSort([9,8,3,7,67])
+console.log(bubbleSort([8, 2 ,7 ,66 ,11 ,0]))
