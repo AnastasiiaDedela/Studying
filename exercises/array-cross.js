@@ -13,6 +13,15 @@ console.log(arrayCross([1,7,8,9,1,7],[3,5,1,4,7,7,1]))
 
 
 
+//variant 2
+function intersection(arr1, arr2) {
+    return [...new Set(arr1.filter(item => arr2.includes(item)))];
+}
+
+
+console.log(intersection([1,7,8,9,1,7],[3,5,1,4,7,7,1]))
+
+
 
 
 
