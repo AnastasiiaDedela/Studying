@@ -1,5 +1,16 @@
-const {format} = require('date-fns')
-const { v4: uuid } = require('uuid')
+const logEvents = require('./logEvents');
 
-console.log(format(new Date(), 'yyyMMdd\tHH:mm:ss'))
-console.log(uuid())
+const EventEmitter = require('events');
+
+class MyEmitter extends EventEmitter {};
+
+//initialize object
+const myEmitter = new MyEmitter()
+
+//add listener for the log event
+myEmitter.on('log', (message)=>logEvents(message))
+
+setTimeout(()=>{
+    //emit event
+    myEmitter.emit('log','log emitted')
+}, 2000)
